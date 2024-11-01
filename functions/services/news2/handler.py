@@ -1,6 +1,6 @@
 import json
 
-def alert(message):
+def notify(message):
     return json.dumps({"send_notification": True, "message": message})
 
 
@@ -115,4 +115,4 @@ def handle(req):
         vital_sign["consciousness"],
     )
 
-    return alert(f"NEWS2 score: {score}")
+    return notify(f"NEWS2 score: {score}")
