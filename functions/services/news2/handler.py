@@ -1,7 +1,7 @@
 import json
 
 def notify(message):
-    return json.dumps({"send_notification": True, "message": message})
+    return json.dumps({"notify": True, "message": message})
 
 
 def calculate_news2(
