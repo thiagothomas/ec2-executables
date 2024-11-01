@@ -1,5 +1,6 @@
 import json
 
+
 def notify(message):
     return json.dumps({"notify": True, "message": message})
 
