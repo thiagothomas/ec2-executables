@@ -149,7 +149,7 @@ def post_metrics():
 
     metrics = system_metrics
 
-    url = "http://localhost:8081/resource-info"
+    url = "http://localhost:8082/resource-info"
     payload = {"metrics": metrics, "threshold": system_threshold}
 
     try:
