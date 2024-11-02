@@ -3,7 +3,7 @@ provider:
   name: openfaas
   gateway: http://127.0.0.1:8080
 functions:
-  news2:
-    lang: python3
+  ml_prediction:
+    lang: python3-debian
     handler: ./services/ml_prediction
     image: thiagothomas/ml_prediction:latest
