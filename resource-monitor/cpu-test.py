@@ -161,7 +161,7 @@ def post_metrics():
 
 
 def start_scheduler():
-    schedule.every(30).seconds.do(post_metrics)
+    schedule.every(10).seconds.do(post_metrics)
 
     while True:
         schedule.run_pending()
