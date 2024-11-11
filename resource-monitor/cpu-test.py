@@ -141,7 +141,7 @@ def update_system_metrics():
             f"System Metrics: {system_metrics}, Thresholds: {thresholds}, System Threshold: {system_threshold}"
         )
 
-        time.sleep(15)
+        time.sleep(1.5)
 
 
 def post_metrics():
@@ -161,7 +161,7 @@ def post_metrics():
 
 
 def start_scheduler():
-    schedule.every(10).seconds.do(post_metrics)
+    schedule.every(3).seconds.do(post_metrics)
 
     while True:
         schedule.run_pending()
