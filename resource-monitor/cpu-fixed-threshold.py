@@ -9,7 +9,7 @@ system_threshold = "NONE"
 
 system_metrics = {}
 smoothed_metrics = {"cpu": 0, "memory": 0, "bandwidth": 0}
-thresholds = {"cpu": {"upper": 90, "lower": 60}, "memory": {"upper": 90, "lower": 60}}
+thresholds = {"cpu": {"upper": 85, "lower": 60}, "memory": {"upper": 85, "lower": 60}}
 observation = 0
 
 app = Flask(__name__)
