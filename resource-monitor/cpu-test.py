@@ -9,7 +9,7 @@ system_threshold = "NONE"
 
 system_metrics = {}
 smoothed_metrics = {"cpu": 0, "memory": 0, "bandwidth": 0}
-thresholds = {"cpu": {"upper": 100, "lower": 40}, "memory": {"upper": 100, "lower": 60}}
+thresholds = {"cpu": {"upper": 90, "lower": 40}, "memory": {"upper": 90, "lower": 60}}
 prev_load = {"cpu": 0, "memory": 0, "bandwidth": 0}
 
 observation = 0
@@ -21,8 +21,8 @@ def reset_thresholds():
     global thresholds
 
     thresholds = {
-        "cpu": {"upper": 100, "lower": 40},
-        "memory": {"upper": 100, "lower": 60},
+        "cpu": {"upper": 90, "lower": 40},
+        "memory": {"upper": 90, "lower": 60},
     }
 
 
@@ -68,6 +68,7 @@ def check_thresholds():
         ):
             reset_thresholds()
             system_threshold = "LOWER"
+            return
         else:
             return
 
