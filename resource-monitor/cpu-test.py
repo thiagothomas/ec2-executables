@@ -37,7 +37,6 @@ def adapt_thresholds(resource, current_load):
     global thresholds, prev_load
 
     delta_load = current_load - prev_load[resource]
-    print(f"Delta Load: {delta_load} for {resource}")
     if delta_load > 0:
         # Load increasing, adjust upper threshold
         thresholds[resource]["upper"] = max(
@@ -118,7 +117,6 @@ def update_system_metrics():
         smoothed_metrics["memory"] = calculate_smoothed_metric(
             smoothed_metrics["memory"], memory_usage, observation
         )
-        print(f"CPU_USAGE: {cpu_usage}, CPU_SMOOTHED: {smoothed_metrics['cpu']}")
     
         smoothed_metrics["bandwidth"] = calculate_smoothed_metric(
             smoothed_metrics["bandwidth"], bandwidth_usage, observation
@@ -138,10 +136,6 @@ def update_system_metrics():
             "latency": smoothed_metrics["bandwidth"],
         }
 
-        print(
-            f"System Metrics: {system_metrics}, Thresholds: {thresholds}, System Threshold: {system_threshold}"
-        )
-
         time.sleep(1.5)
 
 
@@ -156,7 +150,6 @@ def post_metrics():
     try:
         response = requests.post(url, json=payload)
         response.raise_for_status()  # Raise an exception for HTTP errors
-        print(f"Successfully sent metrics: {response.status_code}")
     except requests.exceptions.RequestException as e:
         print(f"Failed to send metrics: {e}")
 
